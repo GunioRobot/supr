@@ -5,13 +5,17 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "supr"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.summary = %Q{Use the su.pr API to shorten or expand URLs}
+    gem.description = %Q{Use the su.pr API to shorten or expand URLs}
     gem.email = "chambb1@gmail.com"
     gem.homepage = "http://github.com/blakechambers/supr"
     gem.authors = ["Blake Chambers"]
     gem.add_development_dependency "rspec", ">= 1.2.9"
     gem.add_development_dependency "yard", ">= 0"
+    
+    gem.add_dependency 'crack',    '>= 0.1.4'
+    gem.add_dependency 'httparty', '>= 0.5.2'
+    
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
   Jeweler::GemcutterTasks.new
