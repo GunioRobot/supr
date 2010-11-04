@@ -50,8 +50,8 @@ Copyright
 
 Copyright (c) 2010 Blake Chambers. See LICENSE for details.
 
-[phil]: "http://github.com/philnash"
-[bitly]: "http://github.com/philnash/bitly"
-[semvar]: "http://semver.org/" 
-[su]: "http://www.stumbleupon.com/" "Stumble Upon"
-[supr]: "http://su.pr/" "Su.pr"
+[phil]:   http://github.com/philnash
+[bitly]:  http://github.com/philnash/bitly
+[semvar]: http://semver.org/
+[su]:     http://www.stumbleupon.com/ "Stumble Upon"
+[supr]:   http://su.pr/ "Su.pr"
