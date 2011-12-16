@@ -1,12 +1,12 @@
 module Supr
-  
+
   class Url
     include Supr::Utils
-    
+
     attr_accessor :long_url, :short_url, :hash
     attr_reader :info, :stats
     VARIABLES = ['long_url', 'short_url', 'hash']
-    
+
     def initialize(login,api_key,obj=nil)
       unless obj.nil?
         raise SuprError.new(obj['errorMessage'],obj['errorCode']) if obj['statusCode'] == "ERROR"
@@ -18,7 +18,7 @@ module Supr
       @api_key = api_key
       raise ArgumentError.new("Please provide a login and api_key") if @login.nil? || @api_key.nil?
     end
-    
+
     def shorten(opts = {})
       return @short_url if @short_url
       unless @long_url.nil?
@@ -34,7 +34,7 @@ module Supr
         raise ArgumentError.new("You need a long_url in order to shorten it")
       end
     end
-    
+
     def expand
       return @long_url if @long_url
       unless !(@short_url || @hash)
@@ -53,7 +53,7 @@ module Supr
         raise ArgumentError.new("You need a short_url or a hash in order to expand it")
       end
     end
-    
+
     # def info
     #   if @info.nil?
     #     if @hash
@@ -75,7 +75,7 @@ module Supr
     #     @info
     #   end
     # end
-    # 
+    #
     # def stats
     #   if @stats.nil?
     #     if @hash

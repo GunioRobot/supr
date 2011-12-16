@@ -12,10 +12,10 @@ begin
     gem.authors = ["Blake Chambers"]
     gem.add_development_dependency "rspec", ">= 1.2.9"
     gem.add_development_dependency "yard", ">= 0"
-    
+
     gem.add_dependency 'crack',    '>= 0.1.4'
     gem.add_dependency 'httparty', '>= 0.5.2'
-    
+
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
   Jeweler::GemcutterTasks.new

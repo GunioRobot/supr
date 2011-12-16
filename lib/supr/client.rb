@@ -11,9 +11,9 @@ module Supr
   end
 
   class Client
-    
+
     include Supr::Utils
-    
+
     def initialize(login,api_key)
       @login = login
       @api_key = api_key
@@ -37,7 +37,7 @@ module Supr
         raise ArgumentError.new("Shorten requires either a url or an array of urls")
       end
     end
-    
+
     def validate
       @validated ||= begin
         self.shorten("http://google.com").kind_of?(::Supr::Url)
@@ -46,7 +46,7 @@ module Supr
       end
     end
     alias :valid? :validate
-    
+
     def expand(input)
       if input.is_a? String
         if input.include?('su.pr/') || input.include?('j.mp/')
@@ -59,7 +59,7 @@ module Supr
           result = get_result(request)
           result = { :hash => input, :short_url => "http://su.pr/#{input}" }.merge result[input]
         end
-        Supr::Url.new(@login,@api_key,result)        
+        Supr::Url.new(@login,@api_key,result)
       elsif input.is_a? Array
         request = create_url "expand", :hash => input.join(',')
         result = get_result(request)
@@ -71,7 +71,7 @@ module Supr
         raise ArgumentError('Expand requires either a short url, a hash or an array of hashes')
       end
     end
-    
+
     # def info(input)
     #   if input.is_a? String
     #     if input.include? "su.pr/"
@@ -96,7 +96,7 @@ module Supr
     #     raise ArgumentError.new('Info requires either a short url, a hash or an array of hashes')
     #   end
     # end
-    # 
+    #
     # def stats(input)
     #   if input.is_a? String
     #     if input.include? "su.pr/"
@@ -114,9 +114,9 @@ module Supr
     #     raise ArgumentError.new("Stats requires either a short url or a hash")
     #   end
     # end
-    
+
   end
-  
+
 end
 
 class SuprError < StandardError
